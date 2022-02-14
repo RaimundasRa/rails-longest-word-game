@@ -1,2 +1,8 @@
-<h1>Is english <%= @english_word %></h1>
-<h1>Is included <%= @included_in_grid %></h1>
+h1>Result</h1>
+  <% if @included_in_grid && @english_word%>
+    <p><strong>Congratulations!</strong> <%= @answer %> is a valid English word!</p>
+  <% elsif %>
+    <p>Sorry but <strong><%= @answer %></strong> does not seem to be a valid English word...</p>
+  <% else %>
+     <p>Sorry but <strong><%= @answer %></strong> can't be built out of <%= @letters.join(", ") %></p>
+  <% end %>
